@@ -1,7 +1,9 @@
 <template>
-  <div class="app">
-    <Tweet />
-  </div>
+
+<div v-for="(tweet, index) in tweets" :key="tweets.name">
+  <Tweet />
+</div>
+
 </template>
 
 <script>
@@ -42,7 +44,13 @@ export default {
         ]
        }
     },
-    components: { Tweet }
+    components: { Tweet },
+    methods: {
+      ArrayLenght(array) {
+      let TotalLenght = array.lenght;
+      return TotalLenght;
+      }
+    }
 }
 </script>
 
