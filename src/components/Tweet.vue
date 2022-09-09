@@ -1,10 +1,6 @@
 <template>
   <div className="tweet">
-    <img
-      src="https://i.imgur.com/9yw1Fyw.jpg"
-      className="profile"
-      alt="profile"
-    />
+    <ProfileImage :src="imageAvatar" />
 
     <div className="body">
       <div className="top">
@@ -34,8 +30,32 @@
 </template>
 
 <script>
+import ProfileImage from './ProfileImage.vue';
+
   export default {
-    props: ["user", "imageSrc", "handle", "timestamp", "message"],
+    components: { ProfileImage },
+    props: {
+      user: {
+      type: String,
+      required: true,
+      default: "Ironhack"
+    },
+    imageAvatar: {
+      type: String,
+      required: true,
+    },
+    handle: {
+      type: String,
+    },
+    timestamp: {
+      type: String,
+      required: true,
+    },
+    message: {
+      type: String,
+      required: true,
+    },
+  },
   };
   </script>
 

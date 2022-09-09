@@ -5,7 +5,7 @@
       v-for="tweet in tweets"
       v-bind="key"
       :user="tweet.user.name"
-      :imageSrc="tweet.user.image"
+      :imageAvatar="tweet.user.image"
       :handle="tweet.user.handle"
       :timestamp="tweet.timestamp"
       :message="tweet.message"
@@ -16,7 +16,6 @@
 </template>
 
 <script>
-
 import Tweet from './components/Tweet.vue';
 
 export default {
