@@ -1,9 +1,18 @@
 <template>
+  <div class="app">
 
-<div v-for="(tweet, index) in tweets" :key="tweets.name">
-  <Tweet />
-</div>
+    <Tweet
+      v-for="tweet in tweets"
+      v-bind="key"
+      :user="tweet.user.name"
+      :imageSrc="tweet.user.image"
+      :handle="tweet.user.handle"
+      :timestamp="tweet.timestamp"
+      :message="tweet.message"
+    />
 
+
+  </div>
 </template>
 
 <script>
@@ -44,13 +53,7 @@ export default {
         ]
        }
     },
-    components: { Tweet },
-    methods: {
-      ArrayLenght(array) {
-      let TotalLenght = array.lenght;
-      return TotalLenght;
-      }
-    }
+    components: { Tweet }
 }
 </script>
 
