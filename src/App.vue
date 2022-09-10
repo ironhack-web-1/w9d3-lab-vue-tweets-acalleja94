@@ -1,11 +1,21 @@
 <template>
   <div class="app">
-    <Tweet />
+
+    <Tweet
+      v-for="(tweet, index) in tweets"
+      :key="index"
+      :twitterName="tweet.user.name"
+      :imageAvatar="tweet.user.image"
+      :twitterHandle="tweet.user.handle"
+      :twitterTimestamp="tweet.timestamp"
+      :twitterMessage="tweet.message"
+    />
+
+
   </div>
 </template>
 
 <script>
-
 import Tweet from './components/Tweet.vue';
 
 export default {
