@@ -4,9 +4,9 @@
     <Tweet
       v-for="tweet in tweets"
       v-bind="key"
-      :user="tweet.user.name"
+      :twitterName="tweet.user.name"
       :imageAvatar="tweet.user.image"
-      :handle="tweet.user.handle"
+      :twitterHandle="tweet.user.handle"
       :timestamp="tweet.timestamp"
       :message="tweet.message"
     />

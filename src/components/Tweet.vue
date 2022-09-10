@@ -4,10 +4,7 @@
 
     <div className="body">
       <div className="top">
-        <span className="user">
-          <span className="name">{{ user }}</span>
-          <span className="handle">{{ handle }}</span>
-        </span>
+        <User :name="twitterName" :handle="twitterHandle" />
 
         <span className="timestamp">{{ timestamp }}</span>
       </div>
@@ -31,20 +28,20 @@
 
 <script>
 import ProfileImage from './ProfileImage.vue';
+import User from "./User.vue";
 
   export default {
-    components: { ProfileImage },
+    components: { ProfileImage, User },
     props: {
-      user: {
+      twitterName: {
       type: String,
-      required: true,
-      default: "Ironhack"
+      default: "Ironhack",
     },
     imageAvatar: {
       type: String,
       required: true,
     },
-    handle: {
+    twitterHandle: {
       type: String,
     },
     timestamp: {
