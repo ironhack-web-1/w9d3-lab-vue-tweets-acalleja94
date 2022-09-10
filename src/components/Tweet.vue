@@ -9,9 +9,7 @@
         <Timestamp :timestamp="twitterTimestamp" />
       </div>
 
-      <p className="message">
-        {{ message }}
-      </p>
+      <Message :message="twitterMessage" />
 
       <div className="actions">
         <!-- Font Awesome icons -->
@@ -30,9 +28,10 @@
 import ProfileImage from './ProfileImage.vue';
 import User from "./User.vue";
 import Timestamp from "./Timestamp.vue";
+import Message from "./Message.vue"
 
   export default {
-    components: { ProfileImage, User, Timestamp },
+    components: { ProfileImage, User, Timestamp, Message },
     props: {
       twitterName: {
       type: String,
@@ -44,14 +43,16 @@ import Timestamp from "./Timestamp.vue";
     },
     twitterHandle: {
       type: String,
+      required: true,
     },
     twitterTimestamp: {
       type: String,
       required: true,
     },
-    message: {
+    twitterMessage: {
       type: String,
       required: true,
+      default: "Yep. I'm coding.",
     },
   },
   };

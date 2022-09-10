@@ -8,7 +8,7 @@
       :imageAvatar="tweet.user.image"
       :twitterHandle="tweet.user.handle"
       :twitterTimestamp="tweet.timestamp"
-      :message="tweet.message"
+      :twitterMessage="tweet.message"
     />
 
 
