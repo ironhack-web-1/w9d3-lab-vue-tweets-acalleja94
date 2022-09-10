@@ -2,8 +2,8 @@
   <div class="app">
 
     <Tweet
-      v-for="tweet in tweets"
-      v-bind="key"
+      v-for="(tweet, index) in tweets"
+      :key="index"
       :twitterName="tweet.user.name"
       :imageAvatar="tweet.user.image"
       :twitterHandle="tweet.user.handle"
