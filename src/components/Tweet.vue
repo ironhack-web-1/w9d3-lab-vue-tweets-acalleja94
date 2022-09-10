@@ -6,7 +6,7 @@
       <div className="top">
         <User :name="twitterName" :handle="twitterHandle" />
 
-        <span className="timestamp">{{ timestamp }}</span>
+        <Timestamp :timestamp="twitterTimestamp" />
       </div>
 
       <p className="message">
@@ -29,9 +29,10 @@
 <script>
 import ProfileImage from './ProfileImage.vue';
 import User from "./User.vue";
+import Timestamp from "./Timestamp.vue";
 
   export default {
-    components: { ProfileImage, User },
+    components: { ProfileImage, User, Timestamp },
     props: {
       twitterName: {
       type: String,
@@ -44,7 +45,7 @@ import User from "./User.vue";
     twitterHandle: {
       type: String,
     },
-    timestamp: {
+    twitterTimestamp: {
       type: String,
       required: true,
     },
